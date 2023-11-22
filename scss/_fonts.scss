@@ -1,0 +1,12 @@
+@mixin font{
+    font-family: 'Josefin Sans';
+    font-size: 18px;
+}
+
+@mixin font400{
+    font-weight: 400;
+}
+
+@mixin font700{
+    font-weight: 700;
+}

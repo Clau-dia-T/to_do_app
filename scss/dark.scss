@@ -1,0 +1,70 @@
+@import 'config';
+
+body{
+    background-color: $color-dark01;
+}
+
+header{
+    background-image: url("http://localhost/to_do/dist/public/css/img/bg-desktop-dark.jpg");
+}
+
+.box01, .box02{
+    background-color: $color-dark02;
+}
+
+.box01{
+    &__input{
+        background-color: $color-dark02;
+        color: $color-dark03;
+        &::placeholder{
+            color: $color-dark04;
+        }
+    }
+}
+
+.box02{  
+    &__items{
+        .active{
+            .todo{
+                color: $color-dark05;
+            }
+        }
+    }
+    &__item{
+        border-bottom: 1px solid $color-dark05;
+        color: $color-dark03;
+    }
+}
+
+.circle{
+    border: 1px solid $color-dark04;
+}
+
+.last{
+    color: $color-dark04;
+    &__input, a{
+        color: $color-dark04;
+        &:hover{
+            color: $color-dark03;
+        }
+    }
+}
+
+@include media-sm{
+    header{
+        background-image: url("http://localhost/to_do/dist/public/css/img/bg-mobile-dark.jpg");
+    }
+    .mobile__f{
+        color: $color-dark04;
+        .filter{
+            color: $color-dark04;
+            &:hover{
+                color: $color-dark03;
+            }
+        }
+    }   
+}
+
+footer{
+    color: $color-dark05;
+}

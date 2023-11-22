@@ -1,0 +1,232 @@
+@import 'config';
+@import 'fonts';
+
+body{
+    max-width: 1440px;
+    @include font;
+    @include font400;
+    margin: auto;
+    background-color: $color-light02;
+}
+
+header{
+    background-image: url("https://localhost/to_do/dist/public/css/img/bg-desktop-light.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 250px;
+    width: 100%;
+}
+
+.todo__box{
+    position: absolute;
+    top: 10%;
+    max-width: 1440px;
+    width: 100%;
+    z-index: 5;
+}
+
+#themetoggle{
+    cursor: pointer;
+}
+
+.title-box, .boxes-box{
+    width: 500px;
+    max-width: 85%;
+    margin: auto;
+}
+
+.title-box{
+    margin-bottom: 35px;
+    @include flex(space-between);
+    text-transform: uppercase;
+    &__title{
+        color: $color-light01;
+        letter-spacing: 15px;
+    }
+    button{
+        background: transparent;
+        border: none;
+    }
+}
+
+.box01, .box02{
+    background-color: $color-light01;
+    @include flex(start);
+    border-radius: 5px;
+    .check{
+        display: none;
+    }
+}
+
+.box01{
+    padding: 28px 20px;
+    height: 50px;
+    margin: 20px 0px;
+    & form{
+        flex:1;
+        margin-right: 10px;
+    }
+    &__input{
+        cursor: pointer;
+        margin-left: 20px;
+        padding-top: 2px;
+        width: 100%;
+        border: none;
+        background-color: $color-light01;
+        color: $color-light05;
+        @include font;
+        @include font400;
+        &::placeholder{
+            color: $color-light04;
+            opacity: 1;
+        }
+        &:focus{
+            outline: none;
+        }
+    }
+}
+
+.box02{
+    @include boxshadow();   
+    &__items{
+        width: 100%;
+        .active{
+            .circle{
+                background: $check-background;
+            }
+            .todo{
+                color: $color-light03;
+                text-decoration: line-through;
+            }
+            .check{
+                display: block;
+            }
+        }
+    }
+    &__item{
+        padding: 18px 20px;
+        @include flex(space-between);
+        border-bottom: 1px solid $color-light03;
+        color: $color-light05;
+        .left{
+            @include flex(start);
+        }
+        .right img{
+            cursor: pointer;
+        }
+        .todo{
+            margin-left: 20px;
+            cursor: pointer;
+        }
+        &:hover{
+            .cross{
+                display: block;
+            }
+        }
+    }
+    &__btn{
+        background-color: transparent;
+        border: none;
+    }
+}
+
+.circle{
+    min-width: 20px;
+    min-height: 20px;
+    border-radius: 50%;
+    border: 1px solid $color-light03;
+    cursor: pointer;
+    &:hover{
+        background: $check-background;
+        .check{
+            display: block;
+        }
+    }
+    .check{
+        margin-left: 4px;
+        margin-top: 5px;
+        width: 10px;
+    }
+}
+
+.cross{
+    display: none;
+}
+
+.last{
+    border: none;
+    @include flex(space-between);
+    font-size: 14px;
+    color: $color-light04;
+    &__input, a{
+        cursor: pointer;
+        text-decoration: none;
+        color: $color-light04;
+        &:hover{
+            color: $color-light05;
+        }
+    }
+    .filters a{
+        @include bold;
+        margin: 8px;
+    }
+    .active{
+        color: $blue;
+    }
+    &__input{
+        @include font;
+        font-size: 14px;
+        background-color: transparent;
+        border: none;
+    }
+}
+
+.mobile__f{
+    display: none;
+}
+
+@include media-sm{
+    header{
+        background-image: url("http://localhost/to_do/dist/public/css/img/bg-mobile-light.jpg");
+    }
+    .filters {
+        display: none;
+    }
+    .mobile__f{
+        @include flex(center);
+        font-size: 14px;
+        color: $color-light04;
+        .filter{
+            @include bold;
+            margin: 10px;
+            text-decoration: none;
+            color: $color-light04;
+            &:hover{
+                color: $color-light05;
+            }
+        }
+        .active{
+            color: $blue;
+        }
+    }   
+    .cross{
+        display: block;
+    }
+}
+
+.dragging{
+    color: $blue;
+}
+
+footer{
+    text-align: center;
+    color: $color-light04;
+    font-size: 14px;
+    width: 100%;
+    position: static;
+    margin-top: 50px;
+    bottom: 0px;
+    @include bold;
+    height: 30px;
+}

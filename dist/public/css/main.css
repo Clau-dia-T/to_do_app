@@ -1,0 +1,249 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  max-width: 1440px;
+  font-family: "Josefin Sans";
+  font-size: 18px;
+  font-weight: 400;
+  margin: auto;
+  background-color: hsl(236, 33%, 92%);
+}
+
+header {
+  background-image: url("https://localhost/to_do/dist/public/css/img/bg-desktop-light.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 250px;
+  width: 100%;
+}
+
+.todo__box {
+  position: absolute;
+  top: 10%;
+  max-width: 1440px;
+  width: 100%;
+  z-index: 5;
+}
+
+#themetoggle {
+  cursor: pointer;
+}
+
+.title-box, .boxes-box {
+  width: 500px;
+  max-width: 85%;
+  margin: auto;
+}
+
+.title-box {
+  margin-bottom: 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+}
+.title-box__title {
+  color: hsl(0, 0%, 98%);
+  letter-spacing: 15px;
+}
+.title-box button {
+  background: transparent;
+  border: none;
+}
+
+.box01, .box02 {
+  background-color: hsl(0, 0%, 98%);
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  border-radius: 5px;
+}
+.box01 .check, .box02 .check {
+  display: none;
+}
+
+.box01 {
+  padding: 28px 20px;
+  height: 50px;
+  margin: 20px 0px;
+}
+.box01 form {
+  flex: 1;
+  margin-right: 10px;
+}
+.box01__input {
+  cursor: pointer;
+  margin-left: 20px;
+  padding-top: 2px;
+  width: 100%;
+  border: none;
+  background-color: hsl(0, 0%, 98%);
+  color: hsl(235, 19%, 35%);
+  font-family: "Josefin Sans";
+  font-size: 18px;
+  font-weight: 400;
+}
+.box01__input::-moz-placeholder {
+  color: hsl(236, 9%, 61%);
+  opacity: 1;
+}
+.box01__input::placeholder {
+  color: hsl(236, 9%, 61%);
+  opacity: 1;
+}
+.box01__input:focus {
+  outline: none;
+}
+
+.box02 {
+  box-shadow: 0px 3px 8px 5px rgba(0, 0, 0, 0.05);
+}
+.box02__items {
+  width: 100%;
+}
+.box02__items .active .circle {
+  background: linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+.box02__items .active .todo {
+  color: hsl(233, 11%, 84%);
+  text-decoration: line-through;
+}
+.box02__items .active .check {
+  display: block;
+}
+.box02__item {
+  padding: 18px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid hsl(233, 11%, 84%);
+  color: hsl(235, 19%, 35%);
+}
+.box02__item .left {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.box02__item .right img {
+  cursor: pointer;
+}
+.box02__item .todo {
+  margin-left: 20px;
+  cursor: pointer;
+}
+.box02__item:hover .cross {
+  display: block;
+}
+.box02__btn {
+  background-color: transparent;
+  border: none;
+}
+
+.circle {
+  min-width: 20px;
+  min-height: 20px;
+  border-radius: 50%;
+  border: 1px solid hsl(233, 11%, 84%);
+  cursor: pointer;
+}
+.circle:hover {
+  background: linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+.circle:hover .check {
+  display: block;
+}
+.circle .check {
+  margin-left: 4px;
+  margin-top: 5px;
+  width: 10px;
+}
+
+.cross {
+  display: none;
+}
+
+.last {
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: hsl(236, 9%, 61%);
+}
+.last__input, .last a {
+  cursor: pointer;
+  text-decoration: none;
+  color: hsl(236, 9%, 61%);
+}
+.last__input:hover, .last a:hover {
+  color: hsl(235, 19%, 35%);
+}
+.last .filters a {
+  font-weight: 700;
+  margin: 8px;
+}
+.last .active {
+  color: hsl(220, 98%, 61%);
+}
+.last__input {
+  font-family: "Josefin Sans";
+  font-size: 18px;
+  font-size: 14px;
+  background-color: transparent;
+  border: none;
+}
+
+.mobile__f {
+  display: none;
+}
+
+@media all and (max-width: 560px) {
+  header {
+    background-image: url("http://localhost/to_do/dist/public/css/img/bg-mobile-light.jpg");
+  }
+  .filters {
+    display: none;
+  }
+  .mobile__f {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    color: hsl(236, 9%, 61%);
+  }
+  .mobile__f .filter {
+    font-weight: 700;
+    margin: 10px;
+    text-decoration: none;
+    color: hsl(236, 9%, 61%);
+  }
+  .mobile__f .filter:hover {
+    color: hsl(235, 19%, 35%);
+  }
+  .mobile__f .active {
+    color: hsl(220, 98%, 61%);
+  }
+  .cross {
+    display: block;
+  }
+}
+.dragging {
+  color: hsl(220, 98%, 61%);
+}
+
+footer {
+  text-align: center;
+  color: hsl(236, 9%, 61%);
+  font-size: 14px;
+  width: 100%;
+  position: static;
+  margin-top: 50px;
+  bottom: 0px;
+  font-weight: 700;
+  height: 30px;
+}/*# sourceMappingURL=main.css.map */

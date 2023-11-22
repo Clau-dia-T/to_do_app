@@ -1,0 +1,68 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: hsl(235, 21%, 11%);
+}
+
+header {
+  background-image: url("http://localhost/to_do/dist/public/css/img/bg-desktop-dark.jpg");
+}
+
+.box01, .box02 {
+  background-color: hsl(235, 24%, 19%);
+}
+
+.box01__input {
+  background-color: hsl(235, 24%, 19%);
+  color: hsl(234, 39%, 85%);
+}
+.box01__input::-moz-placeholder {
+  color: hsl(234, 11%, 52%);
+}
+.box01__input::placeholder {
+  color: hsl(234, 11%, 52%);
+}
+
+.box02__items .active .todo {
+  color: hsl(233, 14%, 35%);
+}
+.box02__item {
+  border-bottom: 1px solid hsl(233, 14%, 35%);
+  color: hsl(234, 39%, 85%);
+}
+
+.circle {
+  border: 1px solid hsl(234, 11%, 52%);
+}
+
+.last {
+  color: hsl(234, 11%, 52%);
+}
+.last__input, .last a {
+  color: hsl(234, 11%, 52%);
+}
+.last__input:hover, .last a:hover {
+  color: hsl(234, 39%, 85%);
+}
+
+@media all and (max-width: 560px) {
+  header {
+    background-image: url("http://localhost/to_do/dist/public/css/img/bg-mobile-dark.jpg");
+  }
+  .mobile__f {
+    color: hsl(234, 11%, 52%);
+  }
+  .mobile__f .filter {
+    color: hsl(234, 11%, 52%);
+  }
+  .mobile__f .filter:hover {
+    color: hsl(234, 39%, 85%);
+  }
+}
+footer {
+  color: hsl(233, 14%, 35%);
+}/*# sourceMappingURL=dark.css.map */

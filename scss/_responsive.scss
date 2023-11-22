@@ -1,0 +1,21 @@
+@include media-md{
+    .filters {
+        display: none;
+    }
+    .mobile__f{
+        @include flex(center);
+        font-size: 14px;
+        color: $secondary-color-light04;
+        a{
+            text-decoration: none;
+            color: $secondary-color-light04;
+            &:hover{
+                color: $secondary-color-light05;
+            }
+            .active{
+                color: $primary-color;
+            }
+        }
+    }
+    
+}
